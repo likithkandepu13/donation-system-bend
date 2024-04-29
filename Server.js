@@ -1,8 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+require("dotenv").config()
 
-const dburl = "mongodb://localhost:27017/donationsystem"
+// const dburl = "mongodb+srv://madaladevendra16:admin@cluster0.4ntliph.mongodb.net/donationsystem"
+const dburl = process.env.mongodburl
 mongoose.connect(dburl).then(() => {
     console.log("Connected to DB Successfully")
 }).catch((err) => {
